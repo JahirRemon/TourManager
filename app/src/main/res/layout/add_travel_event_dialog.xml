@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+            android:gravity="center"
+    android:layout_margin="10dp">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/event_destination"
+            android:background="@drawable/text_view_design"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Destination"
+            android:inputType="text"
+            android:textSize="20sp"
+            android:paddingLeft="10dp"
+            android:maxLines="1"
+            android:singleLine="true"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/event_budget"
+            android:background="@drawable/text_view_design"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Estimated Budget TK"
+            android:paddingLeft="10dp"
+            android:inputType="number"
+            android:textSize="20sp"
+            android:maxLines="1"
+            android:singleLine="true"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/event_from_date"
+            android:background="@drawable/text_view_design"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="From Date"
+            android:textSize="20sp"
+            android:paddingLeft="10dp"/>
+
+
+
+        <TextView
+            android:id="@+id/event_to_date"
+            android:background="@drawable/text_view_design"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="To Date"
+            android:textSize="20sp"
+            android:paddingLeft="10dp"
+            android:gravity="center_vertical"/>
+
+
+    <Button
+        android:id="@+id/addEventBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Event"
+        android:textSize="20sp"
+        android:textAllCaps="false"/>
+
+</LinearLayout>
