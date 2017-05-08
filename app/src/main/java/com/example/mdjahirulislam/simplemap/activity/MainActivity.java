@@ -24,6 +24,7 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
+import java.io.IOException;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements
     private UserSharePreference userSharePreference;
 
     private String userId;
+    private String cityName;
 
 
     @Override
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements
                 .addOnConnectionFailedListener(this)
                 .build();
 
-
+        geocoder = new Geocoder(this);
 
     }
 
@@ -120,8 +122,17 @@ public class MainActivity extends AppCompatActivity implements
 
         currentLatitude = location.getLatitude();
         currentLongitude = location.getLongitude();
+
+        try {
+            addressList = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        cityName = addressList.get(0).getLocality();
         boolean status = locationSharedPreference.setLocation(String.valueOf(currentLatitude),
-                String.valueOf(currentLongitude));
+                String.valueOf(currentLongitude), cityName);
         if (status){
             Toast.makeText(this, "Location Store Successful", Toast.LENGTH_SHORT).show();
 
@@ -158,5 +169,11 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     public void goToWeatherCondition(View view) {
+//        Toast.makeText(this, "under construction ", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(MainActivity.this,WeatherConditionActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+
     }
 }

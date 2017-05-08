@@ -11,6 +11,10 @@ public class AppConfig {
 //    public static String BASE_URL = "http://192.168.0.190/";
 //    public static String BASE_URL = "http://192.168.43.12/";
     public static String BASE_URL = "http://fullnightfun.com/";
+    public static String WEATHER_BASE_URL = "https://query.yahooapis.com/";
+    public static String IMAGE_CODE_URL = "http://fullnightfun.com/weather_icon/";
+
+
 
     public static Retrofit getRetrofit() {
 

@@ -285,6 +285,7 @@ public class AddExpenseActivity extends AppCompatActivity {
                     String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
                     Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+//                    Cursor cursor1 = getContentResolver().query( )
                     assert cursor != null;
                     cursor.moveToFirst();
 
@@ -300,6 +301,7 @@ public class AddExpenseActivity extends AppCompatActivity {
                     voucherIV.setImageBitmap(bitmap);
 
                     flag = 2;
+
                     cursor.close();
 
                 } catch (IOException e) {
@@ -309,10 +311,13 @@ public class AddExpenseActivity extends AppCompatActivity {
             }
 
         } else if (requestCode == CAMERA) {
+//            Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
             Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+
             voucherIV.setImageBitmap(thumbnail);
             saveImage(thumbnail);
             Toast.makeText(AddExpenseActivity.this, "Image Saved!", Toast.LENGTH_SHORT).show();
+            flag = 2;
         }
     }
 

@@ -60,6 +60,8 @@
         </activity>
         <activity android:name=".activity.AddExpenseActivity">
         </activity>
+        <activity android:name=".activity.WeatherConditionActivity">
+        </activity>
     </application>
 
 </manifest>

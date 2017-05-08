@@ -42,13 +42,15 @@
             android:text="Near By"
             android:textAllCaps="false"
             android:onClick="goToLocationNearBy"/>
-        <Button
+        <ImageView
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:text="Weather"
             android:textAllCaps="false"
-            android:onClick="goToWeatherCondition"/>
+            android:onClick="goToWeatherCondition"
+            android:src="@drawable/weather_icon"
+            />
     </LinearLayout>
 
 

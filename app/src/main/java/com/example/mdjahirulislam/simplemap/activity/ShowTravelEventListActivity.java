@@ -245,6 +245,10 @@ public class ShowTravelEventListActivity extends AppCompatActivity{
 
 
     }
+    public void goToWeatherConditionActivity(MenuItem item) {
+        Intent intent = new Intent(ShowTravelEventListActivity.this,WeatherConditionActivity.class);
+        startActivity(intent);
+    }
 
     public void goToNearBy(MenuItem item) {
 
